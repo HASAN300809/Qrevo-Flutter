@@ -1,0 +1,70 @@
+name: QREVO
+description: "A Simple Qr Generator and Scanner App."
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # Device preview untuk testing UI di berbagai device (development only)
+  device_preview: ^1.3.1
+  # Scanner QR Code dengan kamera (support Android/iOS/Web)
+  mobile_scanner: ^7.1.3
+  # Permission handler untuk minta akses kamera, storage, dll
+  permission_handler: ^11.3.1
+  # Generator QR Code cantik & customizable
+  pretty_qr_code: ^3.5.0
+  # Ambil screenshot widget (untuk save/share QR)
+  screenshot: ^3.0.0
+  # Share QR code ke aplikasi lain (WA, IG, Email, dll)
+  share_plus: ^12.0.1
+  image_gallery_saver: ^2.0.3
+
+  cupertino_icons: ^1.0.8
+  pdf: ^3.11.3
+  printing: ^5.14.2
+  path_provider: ^2.1.5
+  open_file: ^3.5.0
+  dio: ^5.0.0
+  intl: ^0.20.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/fonts/
+
+  fonts:
+    - family: SF Pro
+      fonts:
+        - asset: assets/fonts/SFPRODISPLAYREGULAR.OTF
+        - asset: assets/fonts/SFPRODISPLAYBOLD.OTF
+          weight: 700
+
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope-Regular.ttf
+        - asset: assets/fonts/Manrope-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Manrope-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Manrope-Bold.ttf
+          weight: 700
+
+    - family: Martian Mono
+      fonts:
+        - asset: assets/fonts/MartianMono-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/MartianMono-Regular.ttf
