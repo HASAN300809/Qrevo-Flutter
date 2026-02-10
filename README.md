@@ -1,4 +1,4 @@
-# event_scanner_app
+# qrevo-apps
 
 A new Flutter project.
 
