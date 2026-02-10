@@ -23,7 +23,6 @@ dependencies:
   screenshot: ^3.0.0
   # Share QR code ke aplikasi lain (WA, IG, Email, dll)
   share_plus: ^12.0.1
-  image_gallery_saver: ^2.0.3
 
   cupertino_icons: ^1.0.8
   pdf: ^3.11.3
