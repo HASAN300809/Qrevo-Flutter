@@ -9,7 +9,6 @@ import 'package:share_plus/share_plus.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
-import 'package:image_gallery_saver/image_gallery_saver.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 // Color
@@ -74,45 +73,6 @@ class _QrGeneratorScreenState extends State<QrGeneratorScreen> {
       _showErrorSnackBar("Failed to share QR Code");
     }
   }
-
-  Future<void> _saveToGallery() async {
-    if (_qrData == null || _qrData!.isEmpty) return;
-    _showLoading();
-    try {
-      final imageBytes = await _screenshotController.capture(
-        pixelRatio: 3.0,
-      );
-      
-      if (imageBytes != null) {
-        final result = await ImageGallerySaver.saveImage(
-          imageBytes,
-          name: "QRID_${DateTime.now().millisecondsSinceEpoch}",
-        );
-        
-        if (mounted) Navigator.pop(context); // Close loading
-
-        if (result['isSuccess'] == true || result != null) {
-           if (mounted) {
-             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Success! QR Code saved to Gallery'),
-                backgroundColor: Colors.green,
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
-           }
-        } else {
-           _showErrorSnackBar("Failed to save to Gallery");
-        }
-      } else {
-          if (mounted) Navigator.pop(context);
-      }
-    } catch (e) {
-      if (mounted) Navigator.pop(context);
-      _showErrorSnackBar("Error saving: $e");
-    }
-  }
-
   void _pickCustomColor() {
     showModalBottomSheet(
       context: context,
@@ -521,7 +481,7 @@ class _QrGeneratorScreenState extends State<QrGeneratorScreen> {
                                   colors: [kPrimaryColor, kAccentColor],
                                 ).createShader(bounds),
                             child: ElevatedButton.icon(
-                              onPressed: _saveToGallery,
+                              onPressed: null,
                               icon: const Icon(
                                 Icons.save_rounded,
                                 color: Colors.white,
