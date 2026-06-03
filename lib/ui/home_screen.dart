@@ -295,8 +295,8 @@ class _HomeScreenState extends State<HomeScreen> {
     final isRedeemed = ticket.redeemedAt != null;
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 16),
-      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(bottom: 14),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),

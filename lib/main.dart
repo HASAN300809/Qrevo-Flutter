@@ -9,12 +9,13 @@ import 'ui/qr_scanner_screen.dart';
 
 void main() {
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      defaultDevice: Devices.ios.iPhone11ProMax,
-      devices: [Devices.ios.iPhone11ProMax],
-      builder: (context) => const MainApp(),
-    ),
+    // DevicePreview(
+    //   enabled: !kReleaseMode,y
+    //   defaultDevice: Devices.ios.iPhone11ProMax,
+    //   devices: [Devices.ios.iPhone11ProMax],
+    //   builder: (context) => const MainApp(),
+    // ),
+    const MainApp(),
   );
 }
 
@@ -25,9 +26,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // Device Preview
-      useInheritedMediaQuery: true,
-      locale: DevicePreview.locale(context),
-      builder: DevicePreview.appBuilder,
+      // useInheritedMediaQuery: true,
+      // locale: DevicePreview.locale(context),
+      // builder: DevicePreview.appBuilder,
 
       debugShowCheckedModeBanner: false,
       title: 'QREVO - QR Generator & Scanner',
